@@ -2,7 +2,7 @@
 import logo from "../../assets/logo.png";
 ---
 
-<nav class="w-full flex justify-center pt-12 px-6">
+<nav class="w-full flex justify-center pt-12">
     <div class="w-full max-w-3xl flex items-center justify-between">
         <!-- Logo -->
         <a href="/" class="flex items-center">
@@ -15,7 +15,18 @@ import logo from "../../assets/logo.png";
             class="lg:hidden text-black text-3xl focus:outline-none"
             onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
         >
-            ☰
+            <svg
+                fill="currentColor"
+                height="36"
+                icon-name="menu"
+                viewBox="0 0 20 20"
+                width="36"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    d="M17.1 4.801H2.9a.9.9 0 010-1.8h14.199a.9.9 0 01.001 1.8zM18 10a.9.9 0 00-.9-.9H2.9a.9.9 0 000 1.8h14.199A.9.9 0 0018 10zm0 6.1a.9.9 0 00-.9-.9H2.9a.9.9 0 000 1.8h14.199a.9.9 0 00.901-.9z"
+                ></path>
+            </svg>
         </button>
 
         <!-- Desktop Nav -->
@@ -34,16 +45,28 @@ import logo from "../../assets/logo.png";
                bg-white rounded-xl shadow-lg p-2 gap-1 text-base md:text-lg font-normal
                min-w-[250px] z-50"
                 >
-                    <a href="/terms-and-conditions" class="p-2 rounded-xl hover:bg-violet-500/10 transition duration-300">
+                    <a
+                        href="/terms-and-conditions"
+                        class="p-2 rounded-xl hover:bg-violet-500/10 transition duration-300"
+                    >
                         <li>Terms & Conditions</li>
                     </a>
-                    <a href="/privacy-policy" class="p-2 rounded-xl hover:bg-violet-500/10 transition duration-300" >
+                    <a
+                        href="/privacy-policy"
+                        class="p-2 rounded-xl hover:bg-violet-500/10 transition duration-300"
+                    >
                         <li>Privacy Policy</li>
                     </a>
-                    <a href="/cancellation-and-refunds" class="p-2 rounded-xl hover:bg-violet-500/10 transition duration-300" >
+                    <a
+                        href="/cancellation-and-refunds"
+                        class="p-2 rounded-xl hover:bg-violet-500/10 transition duration-300"
+                    >
                         <li>Cancellation & Refunds</li>
                     </a>
-                    <a href="/shipping-policy" class="p-2 rounded-xl hover:bg-violet-500/10 transition duration-300" >
+                    <a
+                        href="/shipping-policy"
+                        class="p-2 rounded-xl hover:bg-violet-500/10 transition duration-300"
+                    >
                         <li>Shipping Policy</li>
                     </a>
                 </ul>
