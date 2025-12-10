@@ -1,0 +1,111 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+    <div class="page-container">
+        <h1>Contact Us</h1>
+        <p>If you have questions, need support, or want to reach the MiSkills team, feel free to contact us anytime.</p>
+
+        <div class="section">
+            <h2>Support Email</h2>
+            <p><strong>support@miskills.com</strong></p>
+        </div>
+
+        <div class="section">
+            <h2>Business Queries</h2>
+            <p><strong>contact@miskills.com</strong></p>
+        </div>
+
+        <div class="section">
+            <h2>Office Address</h2>
+            <p>MiSkills Education Pvt. Ltd.<br />India</p>
+        </div>
+
+        <div class="section">
+            <h2>Contact Form</h2>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required />
+                <input type="email" placeholder="Email Address" required />
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+</Layout>
+
+<style>
+    .page-container {
+        max-width: 750px;
+        margin: 0 auto;
+        padding: 4rem 1.5rem;
+        font-family: Inter, system-ui, sans-serif;
+        color: #111;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-top: 2rem;
+        margin-bottom: 0.75rem;
+    }
+
+    p,
+    li {
+        font-size: 1.05rem;
+        line-height: 1.75rem;
+        margin-bottom: 1rem;
+        color: #444;
+    }
+
+    .section {
+        margin-bottom: 2.5rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid #eee;
+    }
+
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        padding: 0.9rem 1rem;
+        font-size: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 0.6rem;
+        outline: none;
+        background: #fafafa;
+        transition: 0.2s;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+        border-color: #999;
+        background: #fff;
+    }
+
+    .contact-form button {
+        background: #111;
+        color: #fff;
+        padding: 0.9rem 1rem;
+        border: none;
+        border-radius: 0.6rem;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .contact-form button:hover {
+        background: #000;
+    }
+</style>

@@ -1,0 +1,78 @@
+---
+import logo from "../../assets/logo.png";
+---
+
+<nav class="w-full flex justify-center pt-12 px-6">
+    <div class="w-full max-w-3xl flex items-center justify-between">
+        <!-- Logo -->
+        <a href="/" class="flex items-center">
+            <img src={logo.src} width="100" height="28" alt="Astro Homepage" />
+        </a>
+
+        <!-- Hamburger (Mobile) -->
+        <button
+            id="menu-btn"
+            class="lg:hidden text-black text-3xl focus:outline-none"
+            onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+        >
+            ☰
+        </button>
+
+        <!-- Desktop Nav -->
+        <ul
+            class="hidden lg:flex gap-6 items-center text-lg md:text-2xl text-black"
+        >
+            <li><a href="/">Home</a></li>
+
+            <!-- Dropdown -->
+            <li class="relative group cursor-pointer">
+                Policies ▾
+
+                <!-- Dropdown List -->
+                <ul
+                    class="absolute left-0 top-full hidden group-hover:flex flex-col
+               bg-white rounded-xl shadow-lg p-2 gap-1 text-base md:text-lg font-normal
+               min-w-[250px] z-50"
+                >
+                    <a href="/terms-and-conditions" class="p-2 rounded-xl hover:bg-violet-500/10 transition duration-300">
+                        <li>Terms & Conditions</li>
+                    </a>
+                    <a href="/privacy-policy" class="p-2 rounded-xl hover:bg-violet-500/10 transition duration-300" >
+                        <li>Privacy Policy</li>
+                    </a>
+                    <a href="/cancellation-and-refunds" class="p-2 rounded-xl hover:bg-violet-500/10 transition duration-300" >
+                        <li>Cancellation & Refunds</li>
+                    </a>
+                    <a href="/shipping-policy" class="p-2 rounded-xl hover:bg-violet-500/10 transition duration-300" >
+                        <li>Shipping Policy</li>
+                    </a>
+                </ul>
+            </li>
+
+            <li><a href="/contact-us">Contact Us</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<ul
+    id="mobile-menu"
+    class="hidden lg:hidden flex flex-col gap-4 text-lg font-semibold bg-white/70 backdrop-blur-xl p-6 mx-4 mt-2 rounded-xl"
+>
+    <li><a href="/">Home</a></li>
+
+    <!-- Dropdown (Mobile) -->
+    <details class="cursor-pointer">
+        <summary class="font-semibold">Policies</summary>
+        <ul class="ml-4 mt-2 flex flex-col gap-2 text-base">
+            <li><a href="/terms-and-conditions">Terms & Conditions</a></li>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li>
+                <a href="/cancellation-and-refunds">Cancellation & Refunds</a>
+            </li>
+            <li><a href="/shipping-policy">Shipping Policy</a></li>
+        </ul>
+    </details>
+
+    <li><a href="/contact-us">Contact Us</a></li>
+</ul>

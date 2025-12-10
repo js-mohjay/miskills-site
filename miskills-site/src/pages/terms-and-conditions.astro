@@ -1,0 +1,120 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const today = "10 December 2025";
+---
+
+<Layout>
+    <div class="page-container">
+        <h1>Terms & Conditions</h1>
+        <p><strong>Last Updated:</strong> {today}</p>
+
+        <div class="section">
+            <h2>1. Introduction</h2>
+            <p>
+                Welcome to MiSkills. By subscribing to or using our educational
+                services, you agree to these Terms & Conditions. If you do not
+                agree, please do not use the platform.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>2. Subscription & Access</h2>
+            <p>
+                MiSkills offers subscription-based online learning content. Upon
+                successful payment, you receive access to the subscribed content
+                for the duration of your plan.
+            </p>
+            <p>
+                Subscriptions are non-transferable and should only be used by
+                the registered user.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>3. Payments</h2>
+            <p>
+                All payments are processed securely via Razorpay. By completing
+                a payment, you authorize Razorpay to process your transaction.
+            </p>
+            <p>
+                You must provide accurate billing information. Failed or
+                disputed payments may result in restricted access.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>4. Content Usage</h2>
+            <p>
+                All course content, videos, study materials, and resources are
+                the intellectual property of MiSkills. Redistribution,
+                recording, or unauthorized sharing is strictly prohibited.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>5. Account Termination</h2>
+            <p>
+                We reserve the right to suspend or terminate accounts involved
+                in misuse, abuse, or violation of platform policies.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>6. Changes to Terms</h2>
+            <p>
+                MiSkills may update these terms periodically. Continued use of
+                the platform indicates acceptance of updated terms.
+            </p>
+        </div>
+    </div>
+</Layout>
+
+<style>
+    /* same global styles */
+</style>
+
+<style>
+    .page-container {
+        max-width: 750px;
+        margin: 0 auto;
+        padding: 4rem 1.5rem;
+        font-family: Inter, system-ui, sans-serif;
+        color: #111;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-top: 2rem;
+        margin-bottom: 0.75rem;
+    }
+
+    p,
+    li {
+        font-size: 1.05rem;
+        line-height: 1.75rem;
+        margin-bottom: 1rem;
+        color: #444;
+    }
+
+    ul {
+        padding-left: 1.25rem;
+    }
+
+    strong {
+        color: #000;
+    }
+
+    .section {
+        margin-bottom: 2.5rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid #eee;
+    }
+</style>

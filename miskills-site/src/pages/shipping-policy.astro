@@ -1,0 +1,80 @@
+---
+import Layout from "../layouts/Layout.astro";
+const today = "10 December 2025";
+---
+
+<Layout>
+    <div class="page-container">
+        <h1>Shipping Policy</h1>
+        <p><strong>Last Updated:</strong> {today}</p>
+
+        <div class="section">
+            <h2>1. Digital Delivery</h2>
+            <p>
+                MiSkills provides online educational content only. No physical
+                products are shipped.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>2. Access Timeline</h2>
+            <p>
+                After successful payment, access to your digital subscription is
+                provided instantly.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>3. Access Issues</h2>
+            <p>
+                If you face issues accessing content after payment, please
+                contact our support team for assistance.
+            </p>
+        </div>
+    </div>
+</Layout>
+
+<style>
+    .page-container {
+        max-width: 750px;
+        margin: 0 auto;
+        padding: 4rem 1.5rem;
+        font-family: Inter, system-ui, sans-serif;
+        color: #111;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-top: 2rem;
+        margin-bottom: 0.75rem;
+    }
+
+    p,
+    li {
+        font-size: 1.05rem;
+        line-height: 1.75rem;
+        margin-bottom: 1rem;
+        color: #444;
+    }
+
+    ul {
+        padding-left: 1.25rem;
+    }
+
+    strong {
+        color: #000;
+    }
+
+    .section {
+        margin-bottom: 2.5rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid #eee;
+    }
+</style>
