@@ -1,0 +1,218 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+/**
+ * MOCK DATA
+ * Replace later with API fetch or Astro load()
+ */
+
+const categories = [
+    {
+        name: "Web Development",
+        description: "Frontend, Backend, Full Stack",
+        slug: "web-development",
+        benefits: [
+            "Project-based learning",
+            "Job-ready skills",
+            "Experienced mentors"
+        ]
+    }
+];
+
+const subcategories = [
+    {
+        name: "Frontend",
+        benefits: [
+            "HTML, CSS & JavaScript mastery",
+            "Responsive UI",
+            "Hands-on projects"
+        ],
+        basePrice: 499,
+        dailyHours: 1,
+        days: 30,
+        isActive: false,
+        categorySlug: "web-development"
+    },
+    {
+        name: "Backend",
+        benefits: [
+            "APIs & Databases",
+            "Authentication",
+            "Scalable architecture"
+        ],
+        basePrice: 699,
+        dailyHours: 1.5,
+        days: 45,
+        isActive: true,
+        categorySlug: "web-development"
+    }
+];
+---
+
+<Layout>
+    <div class="page-container">
+        <h1>Plans & Pricing</h1>
+        <p class="subtitle">
+            Choose a learning path designed to make you job-ready with real-world skills.
+        </p>
+
+        {categories.map(category => (
+                <section class="category">
+                    <h2>{category.name}</h2>
+                    <p class="category-desc">{category.description}</p>
+
+                    <ul class="category-benefits">
+                        {category.benefits.map(b => <li>{b}</li>)}
+                    </ul>
+
+                    <div class="plans-grid">
+                        {subcategories
+                            .filter(s => s.categorySlug === category.slug)
+                            .map(plan => (
+                                    <div class={`plan-card ${!plan.isActive ? "disabled" : ""}`}>
+                                        <h3>{plan.name}</h3>
+
+                                        <p class="price">
+                                            ₹{plan.basePrice}
+                                            <span>/ {plan.days} days</span>
+                                        </p>
+
+                                        <p class="meta">
+                                            {plan.dailyHours} hr/day · {plan.days} days
+                                        </p>
+
+                                        <ul class="plan-benefits">
+                                            {plan.benefits.map(b => <li>{b}</li>)}
+                                        </ul>
+
+                                        {plan.isActive ? (
+                                                <button>Enroll Now</button>
+                                        ) : (
+                                                <button disabled>Coming Soon</button>
+                                        )}
+                                    </div>
+                            ))}
+                    </div>
+                </section>
+        ))}
+    </div>
+</Layout>
+
+<style>
+    .page-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 4rem 1rem;
+        font-family: Inter, system-ui, sans-serif;
+        color: #111;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+    }
+
+    .subtitle {
+        margin-top: 0.75rem;
+        font-size: 1.1rem;
+        color: #555;
+    }
+
+    .category {
+        margin-top: 4rem;
+    }
+
+    .category h2 {
+        font-size: 2rem;
+        font-weight: 600;
+    }
+
+    .category-desc {
+        margin: 0.5rem 0 1rem;
+        color: #555;
+    }
+
+    .category-benefits {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-bottom: 2rem;
+    }
+
+    .category-benefits li {
+        background: #f5f5f5;
+        padding: 0.4rem 0.75rem;
+        border-radius: 999px;
+        font-size: 0.9rem;
+    }
+
+    .plans-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .plan-card {
+        border: 1px solid #eee;
+        border-radius: 1rem;
+        padding: 1.5rem;
+        background: #fff;
+        transition: 0.2s;
+    }
+
+    .plan-card:hover {
+        transform: translateY(-2px);
+    }
+
+    .plan-card.disabled {
+        opacity: 0.55;
+        pointer-events: none;
+    }
+
+    .plan-card h3 {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .price {
+        font-size: 1.6rem;
+        font-weight: 700;
+    }
+
+    .price span {
+        font-size: 0.9rem;
+        color: #555;
+    }
+
+    .meta {
+        margin: 0.5rem 0 1rem;
+        font-size: 0.95rem;
+        color: #666;
+    }
+
+    .plan-benefits {
+        margin-bottom: 1.5rem;
+    }
+
+    .plan-benefits li {
+        margin-bottom: 0.4rem;
+        font-size: 0.95rem;
+    }
+
+    button {
+        width: 100%;
+        padding: 0.75rem;
+        border-radius: 0.6rem;
+        border: none;
+        font-size: 1rem;
+        cursor: pointer;
+        background: #111;
+        color: #fff;
+    }
+
+    button:disabled {
+        background: #ccc;
+        color: #666;
+        cursor: not-allowed;
+    }
+</style>
